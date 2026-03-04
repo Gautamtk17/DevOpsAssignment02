@@ -15,19 +15,25 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn clean compile'
+                dir('factorial-app') {         // <-- Add this
+                    bat 'mvn clean compile'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                dir('factorial-app') {         // <-- Add this
+                    bat 'mvn test'
+                }
             }
         }
 
         stage('Package') {
             steps {
-                bat 'mvn package'
+                dir('factorial-app') {         // <-- Add this
+                    bat 'mvn package'
+                }
             }
         }
     }
