@@ -2,8 +2,8 @@ pipeline {
     agent { label 'master-one' }   // Replace with your slave node label
 
     tools {
-        maven 'Maven3'             // Name configured in Global Tool Configuration
-        jdk 'JDK11'                // Optional (if configured)
+        jdk 'JDK21'
+        maven 'Maven39'
     }
 
     stages {
